@@ -1,0 +1,521 @@
+img {
+  display: block;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.menu a {
+  color: white;
+  padding: 0px 10px;
+
+  &:hover {
+    color: fuchsia;
+  }
+}
+
+/* bikin garis begin*/
+
+.hamb-line {
+  background-color: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+
+  &::before,
+  &::after {
+    background-color: white;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  &::before {
+    top: 5px;
+  }
+
+  &::after {
+    top: -5px;
+  }
+}
+
+/* bikin garis end*/
+
+#side-menu {
+  display: none;
+
+  &:checked ~ .hamb .hamb-line {
+    background: transparent;
+
+    &::before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+      top: 0;
+    }
+  }
+}
+
+/* Animasi Toggle Menu Layar Kecil Begin */
+
+/* Animasi Toggle Menu Layar Kecil Begin */
+
+header {
+  background-image: linear-gradient(to bottom right, indigo, rgb(189, 84, 250));
+}
+
+/* Responsiveness Begin */
+
+.hamburger-container {
+  top: 2rem;
+  right: 2rem;
+  position: absolute;
+}
+
+.header-body {
+  background-image: linear-gradient(to bottom right, indigo, rgb(189, 84, 250));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  color: white;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+}
+
+.header-hamburger {
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+  cursor: pointer;
+}
+
+nav ul {
+  transition: all 1s ease-in-out;
+  padding-left: 1.5rem;
+  padding-bottom: 3rem;
+  color: white;
+  width: 100%;
+  z-index: -1;
+  left: 0px;
+  position: absolute;
+  background-color: indigo;
+
+  li {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+
+    a {
+      color: white;
+
+      &:hover {
+        color: skyblue;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .search-container {
+    .search-body {
+      width: 40vw !important;
+      .search-box {
+        width: 35vw !important;
+      }
+    }
+  }
+  .header-container {
+    width: 100%;
+    z-index: 5;
+    top: 0px;
+    left: 0px;
+    position: sticky;
+  }
+
+  .header-body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  nav ul {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    align-items: center;
+    width: auto;
+    display: flex;
+    position: static;
+    background-color: transparent;
+
+    li a {
+      padding: 1rem;
+    }
+  }
+
+  .header-body {
+    display: flex;
+  }
+
+  .header-hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50px;
+  }
+
+  .resto-container {
+    padding: 0 125px !important;
+  }
+
+  .hamb {
+    display: none;
+  }
+
+  .card {
+    max-width: 350px;
+  }
+}
+
+/* Responsiveness End */
+
+/*** Body ***/
+
+.card {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  position: relative;
+
+  .card-header img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    height: 214px;
+    object-fit: cover;
+  }
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-tag {
+  background-color: indigo;
+  padding: 4px 8px;
+  border-radius: 0 50px 50px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  min-width: 100px;
+}
+
+.card-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: indigo;
+
+  &:hover {
+    color: fuchsia;
+  }
+}
+
+.card-description {
+  font-size: small;
+  color: gray;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button,
+a,
+input {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+button {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #0077ff;
+  background-color: #e0efff;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: #0077ff;
+    color: #e0efff;
+  }
+}
+
+.title {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.resto-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5em;
+  padding: 0 25px;
+}
+
+/* rating bintang */
+
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+
+  &::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+  }
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+
+  &::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #f8ce0b;
+  }
+}
+
+#resto-section .title {
+  background-image: linear-gradient(45deg, #ffbaea, indigo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-color: rgb(14, 13, 13);
+}
+
+.hero-description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-title {
+  font-size: 64px;
+}
+
+.hero-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+footer {
+  background-color: indigo;
+  padding: 5px;
+  margin: 25px auto auto auto;
+  color: white;
+  font-size: small;
+  text-align: center;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: indigo;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+
+  .search-body {
+    background-color: #dddbda;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+    padding: 25px;
+
+    .search-box {
+      position: relative;
+      width: 80vw;
+      height: 3rem;
+      padding-left: 1.5rem;
+      border-radius: 1.5rem;
+      background: #ffffff;
+      box-shadow: 0 1.25rem 5rem -1rem rgba(0, 0, 30, 0.5);
+      transition: transform 200ms ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 1.5rem;
+        box-shadow: 0 0.5rem 2rem -1rem rgba(0, 0, 100, 0.5);
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 300ms ease-in-out;
+      }
+
+      .search-input {
+        all: unset;
+        width: 100%;
+        height: 100%;
+        color: #333355;
+
+        &::placeholder {
+          color: inherit;
+          opacity: 0.3;
+        }
+      }
+
+      .search-button {
+        all: unset;
+        position: absolute;
+        right: 0;
+        height: 3rem;
+        padding-left: 1rem;
+        border-radius: 1.5rem;
+        background: mediumorchid;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 1.5rem;
+          box-shadow: 0 0.5rem 2rem 0 rgb(41, 110, 199, 0.25),
+            0 0.5rem 1rem -0.75rem rgb(0, 0, 0, 0.5);
+          opacity: 0;
+          transition: opacity 300ms ease-in-out;
+        }
+
+        &:hover::before {
+          opacity: 1;
+        }
+
+        label {
+          display: block;
+          opacity: 0;
+          color: white;
+          width: 0;
+          transition: width 200ms ease-in-out, opacity 100ms ease-in-out;
+        }
+
+        .search-icon {
+          position: absolute;
+          height: 0.875rem;
+          width: 0.875rem;
+          top: 1rem;
+          left: 0.875rem;
+          border: 0.125rem solid white;
+          border-radius: 50%;
+          box-sizing: border-box;
+          transform: rotate(-45deg);
+
+          &::after {
+            content: "";
+            position: absolute;
+            height: 0.5rem;
+            width: 0.125rem;
+            background: white;
+            left: calc(50% - (0.125rem / 2));
+            bottom: -0.6rem;
+          }
+        }
+      }
+
+      &:has(input:not(:placeholder-shown)) {
+        button {
+          label {
+            opacity: 1;
+            width: 3rem;
+            margin-left: -0.5rem;
+            padding-right: 1rem;
+          }
+        }
+      }
+
+      &:has(input:focus) {
+        transform: translateY(-0.5rem);
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
