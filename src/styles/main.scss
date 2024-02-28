@@ -140,6 +140,8 @@ nav ul {
     a {
       color: white;
 
+      padding: 1rem;
+
       &:hover {
         color: skyblue;
       }
@@ -250,7 +252,7 @@ nav ul {
   font-size: 24px;
   font-weight: 600;
   color: indigo;
-
+  display: inline-block;
   &:hover {
     color: fuchsia;
   }
