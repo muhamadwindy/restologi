@@ -3,44 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/icons/icon-72x72.png" />
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+    <link rel="manifest" href="./app.webmanifest" />
     <title>Restologi. explore the restaurants you want</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
-    <a href="#resto-section" class="skip-link">Go to content</a>
+    <a href="/#mainContent" class="skip-link">Go to content</a>
     <header>
-      <div class="header-container">
-        <div class="header-body">
-          <div class="header-logo">Restologi</div>
-          <div class="hamburger-container">
-            <input type="checkbox" id="side-menu" />
-            <label class="hamb" for="side-menu">
-              <span class="hamb-line"></span>
-            </label>
-          </div>
-          <nav>
-            <ul id="ul-menu">
-              <li><a href="/">Home</a></li>
-              <li><a href="#">Favorite</a></li>
-              <li>
-                <a href="https://muhamadwindy.vercel.app" target="_blank"
-                  >About Us</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div class="menu">
+        <button id="hamburgerButton">
+          <span class="hamb-line"></span>
+        </button>
       </div>
+      <div class="brand">
+        <h1>Restologi</h1>
+      </div>
+      <nav id="navigationDrawer">
+        <ul>
+          <li><a href="/#">Home</a></li>
+          <li><a href="/#/Favorite">Favorite</a></li>
+          <li>
+            <a href="https://muhamadwindy.vercel.app" target="_blank"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section id="hero-section">
         <div class="hero-container">
-          <img
-            class="hero-image"
-            src="./images/heros/hero-image_2.jpg"
-            alt="Hero Image" />
+          <picture class="hero-image">
+            <source
+              media="(max-width: 600px)"
+              srcset="./images/heros/hero-image_2-small.jpg" />
+            <img
+              src="./images/heros/hero-image_2.jpg"
+              alt="Hero Image"
+              class="hero-image" />
+          </picture>
           <div class="hero-description">
             <div class="hero-title">Welcome</div>
             <div>Find your best restaurant with super delicious food</div>
@@ -82,12 +87,11 @@
           </div>
         </div>
       </section>
-      <section id="resto-section">
-        <h1 class="title">Explore Restaurant</h1>
-      </section>
+      <section id="mainContent"></section>
     </main>
     <footer>
       <p>&copy; 2024 Muhamad Windy Sulistiyo. All Rights Reserved</p>
     </footer>
+    <div id="cover-spin"></div>
   </body>
 </html>

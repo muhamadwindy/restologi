@@ -1,35 +1,28 @@
-import "regenerator-runtime"; /* for async await transpile */
-// import "../styles/main.css";
-import "../styles/main.scss";
-import "../scripts/data-restaurant.js";
-const dataRestaurant = document.createElement("data-restaurant");
-const restoSection = document.querySelector("#resto-section");
-restoSection.appendChild(dataRestaurant);
+import 'regenerator-runtime'; /* for async await transpile */
+import '../styles/main.scss';
+import './data-restaurant';
+import App from './views/app';
+import swRegister from './utils/sw-register';
 
-const sideMenu = document.querySelector("#side-menu");
-const ulMenu = document.querySelector("#ul-menu");
-ulMenu.style["top"] = "65px";
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
-document.querySelector("html").focus();
-sideMenu.addEventListener("change", () => {
-  if (sideMenu.checked) {
-    // ulMenu.style["top"] = "60px";
-    ulMenu.style["left"] = "0px";
-    ulMenu.style["zIndex"] = "1";
-  } else {
-    // ulMenu.style["top"] = "-490px";
-    ulMenu.style["left"] = "-700px";
-    ulMenu.style["zIndex"] = "-1";
-  }
+const START = 10;
+const NUMBER_OF_IMAGES = 100;
+
+const container = document.querySelector('#mainContent');
+
+const app = new App({
+  button: document.querySelector('#hamburgerButton'),
+  drawer: document.querySelector('#navigationDrawer'),
+  container,
 });
 
-const restoContainer = document.querySelector(".resto-container");
-const searchButton = document.querySelector(".search-button");
-const searchInput = document.querySelector(".search-input");
-dataRestaurant.setAttribute("filter", searchInput.value || "");
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-searchButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  dataRestaurant.setAttribute("filter", searchInput.value);
-  restoContainer.focus();
+window.addEventListener('load', async () => {
+  app.renderPage();
+  await swRegister();
 });
