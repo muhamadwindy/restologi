@@ -9,6 +9,8 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -98,3 +100,8 @@ module.exports = {
     new MiniCssExtractPlugin(),
   ],
 };
+const isProd = false;
+
+if (isProd) {
+  module.exports.plugins.push(new BundleAnalyzerPlugin());
+}

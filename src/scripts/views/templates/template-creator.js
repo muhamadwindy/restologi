@@ -140,15 +140,15 @@ const createRestoCard = (resto) => {
           <img class="lazyload"
             data-src=
             "https://restaurant-api.dicoding.dev/images/small/${
-              resto.pictureId
-            }"
+  resto.pictureId
+}"
             alt="${resto.name || ''}" />
         </div>
         <div class="card-body">
           <div class="card-tag">${resto.city}</div> 
           <a href="/#/detail/${resto.id}" class="card-name resto-name">${
-    resto.name || '-'
-  }</a>
+  resto.name || '-'
+}</a>
           <div class="card-description">${resto.description}</div>    
           
           <div class="stars-outer">

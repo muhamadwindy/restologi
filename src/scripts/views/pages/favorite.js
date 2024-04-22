@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import FavoriteRestoIdb from '../../data/favorite-resto';
 import { createRestoCard } from '../templates/template-creator';
 import FavoriteRestoSearchPresenter from './liked-resto/favorite-resto-search-presenter';

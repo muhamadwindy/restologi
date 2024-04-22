@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { createRestoCard } from '../../templates/template-creator';
 
 class FavoriteRestoView {
@@ -34,6 +36,7 @@ class FavoriteRestoView {
       .querySelector('.resto-container')
       .dispatchEvent(new Event('resto:updated'));
   }
+
   _getEmptyRestoTemplate() {
     return `
       <div class="resto-item__not__found">

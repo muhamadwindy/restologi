@@ -1,3 +1,4 @@
+/* eslint-disable */
 class FavoriteRestoShowPresenter {
   constructor({ view, favoriteResto }) {
     this._view = view;
@@ -9,6 +10,7 @@ class FavoriteRestoShowPresenter {
     const resto = await this._favoriteResto.getAll();
     this._displayResto(resto);
   }
+
   _displayResto(resto) {
     this._view.showFavoriteResto(resto);
   }

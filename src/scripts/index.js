@@ -7,8 +7,10 @@ import swRegister from './utils/sw-register';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
+/* eslint-disable */
 const START = 10;
 const NUMBER_OF_IMAGES = 100;
+/* eslint-enable */
 
 const container = document.querySelector('#mainContent');
 

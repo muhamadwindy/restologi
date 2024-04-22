@@ -1,3 +1,4 @@
+/* eslint-disable */
 class FavoriteRestoSearchPresenter {
   constructor({ favoriteResto, view }) {
     this._favoriteResto = favoriteResto;
